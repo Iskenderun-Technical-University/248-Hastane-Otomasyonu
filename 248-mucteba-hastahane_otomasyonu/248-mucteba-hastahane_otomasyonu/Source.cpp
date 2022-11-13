@@ -21,7 +21,7 @@ void gotoxy(int x, int y)
 class Adres {
 	string mahalle, sokak, ilcee, tel_no;
 	int apt_no;
-public:
+
 	Adres(string mh, string sk, string ilce, int apt, string tel) {
 		mahalle = mh;
 		sokak = sk;
@@ -35,12 +35,25 @@ public:
 	}
 };
 
-int main() {
-	setlocale(LC_ALL, "Turkish");
-	system("title Ýskenderun Devlet Hastanesi                                                                                                          ");
+class Insan {
+
+	string isim, soyisim, tcNo;
+	Adres adres;
+
+	Insan(string mh, string sk, string ilce, int apt, string tel, string tc, string i, string si) :adres(mh, sk, ilce, apt, tel) {
+		tcNo = tc;
+		isim = i;
+		soyisim = si;
+
+	}
+
+
+	int main() {
+		setlocale(LC_ALL, "Turkish");
+		system("title Ýskenderun Devlet Hastanesi                                                                                                          ");
 
 
 
-	system("pause");
+		system("pause");
 
-}
+	}
