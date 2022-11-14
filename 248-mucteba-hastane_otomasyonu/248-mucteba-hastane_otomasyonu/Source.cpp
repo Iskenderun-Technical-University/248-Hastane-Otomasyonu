@@ -67,25 +67,25 @@ public:
 
 class Randevu {
 	string tarih, islemturu;
-	int islem, ucret;
+	int ucret, islem;
 public:
 	Randevu(int isl, string tar)
 	{
 		islem = isl;
 		tarih = tar;
-		if (isl == 0)
-		{
-			islemturu = "muayene";
-			ucret = 200;
-		}
 		if (isl == 1)
 		{
+			islemturu = "muayene";
+			ucret = 500;
+		}
+		if (isl == 2)
+		{
 			islemturu = "operasyon";
-			ucret = 2000;
+			ucret = 2500;
 		}
 	}
 	void ekranaBasRanvdevu() {
-		cout << endl << "_______" << endl << "Tarih : " << tarih << endl << "İşlem : " << islemturu << endl << "Alınacak ücret : " << ucret;
+		cout << endl << "________________________" << endl << "Tarih : " << tarih << endl << "İşlem : " << islemturu << endl << "Alınacak ücret : " << ucret;
 	}
 
 };
