@@ -76,18 +76,29 @@ public:
 		if (isl == 1)
 		{
 			islemturu = "muayene";
-			ucret = 500;
+			ucret = 200;
 		}
 		if (isl == 2)
 		{
 			islemturu = "operasyon";
-			ucret = 2500;
+			ucret = 2000;
 		}
 	}
 	void ekranaBasRanvdevu() {
 		cout << endl << "________________________" << endl << "Tarih : " << tarih << endl << "İşlem : " << islemturu << endl << "Alınacak ücret : " << ucret;
 	}
 
+};
+
+class Hasta : public Insan {
+	Randevu randevu;
+public:
+	Hasta(string mh, string sk, string ilce, int apt, string tel, string tc, string i, string si, int isl, string tar) :randevu(isl, tar), Insan(mh, sk, ilce, apt, tel, tc, i, si) {}
+
+	void BilgiAl() {
+
+		randevu.ekranaBasRanvdevu();
+	}
 };
 
 int main() {
