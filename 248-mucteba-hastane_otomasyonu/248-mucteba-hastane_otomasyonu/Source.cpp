@@ -5,12 +5,12 @@
 
 using namespace std;
 
-void color(int color)
+void color(int color) //@ErcanDuman
 {
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
 }
 
-void gotoxy(int x, int y)
+void gotoxy(int x, int y) //@ErcanDuman
 {
 	COORD c;
 	c.X = x;
@@ -18,7 +18,8 @@ void gotoxy(int x, int y)
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c);
 }
 
-class Adres {
+class Adres   //@NurullahSahin
+{ 
 	string mahalle, sokak, ilcee, tel_no;
 	int apt_no;
 public:
@@ -35,7 +36,8 @@ public:
 	}
 };
 
-class Insan {
+class Insan    
+{
 
 	string isim, soyisim, tcNo;
 	Adres adres;
@@ -51,8 +53,9 @@ public:
 
 };
 
-
-class Doktor :public Insan {
+//@NurullahSahin
+class Doktor :public Insan 
+{
 	int poliklinik_no;
 
 public:
@@ -65,7 +68,8 @@ public:
 
 };
 
-class Randevu {
+class Randevu //@ErenAyguer
+{
 	string tarih, islemturu;
 	int ucret, islem;
 public:
@@ -103,7 +107,7 @@ public:
 
 int main() {
 	setlocale(LC_ALL, "Turkish");               
-	system("title Ýskenderun Devlet Hastanesi  Randevu Sistemi                                                                                                   ");
+	system("title Ýskenderun Devlet Hastanesi  Randevu Sistemi                                                                                                   "); //@NurullahSahin
 
 
 	system("pause");
