@@ -106,6 +106,7 @@ public:
 };
 
 int main() {
+
 	setlocale(LC_ALL, "Turkish");               
 	system("title Ýskenderun Devlet Hastanesi  Randevu Sistemi                                                                                                   "); //@NurullahSahin
 
