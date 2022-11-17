@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void color(int color) //@ErcanDuman
+void color(int color)  //@ErcanDuman
 {
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
 }
@@ -18,8 +18,8 @@ void gotoxy(int x, int y) //@ErcanDuman
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c);
 }
 
-class Adres   //@NurullahSahin
-{ 
+class Adres    //@NurullahSahin
+{
 	string mahalle, sokak, ilcee, tel_no;
 	int apt_no;
 public:
@@ -36,8 +36,7 @@ public:
 	}
 };
 
-class Insan    
-{
+class Insan {
 
 	string isim, soyisim, tcNo;
 	Adres adres;
@@ -54,8 +53,7 @@ public:
 };
 
 //@NurullahSahin
-class Doktor :public Insan 
-{
+class Doktor :public Insan {
 	int poliklinik_no;
 
 public:
@@ -104,10 +102,52 @@ public:
 		randevu.ekranaBasRanvdevu();
 	}
 };
+//@ErenAyguer
+void RandevuOluþtur(Doktor& d)
+{
+	string i, tc, si, mh, sk, ilce, tar;
+	int apt, isl;
+	system("cls");
+	cout << endl << "_______Randevu bilgileri_______" << endl;
+	cout << endl << "-----Ýstediðiniz randevuyu seçin-----" << endl;
+
+
+
+	cout << endl << "-----Hastanýn bilgileri-----" << endl;
+
+	cout << endl << "Hasta Adý : ";
+	getline(cin, i);
+	cout << endl << "Hasta Soyadý : ";
+	getline(cin, si);
+	cout << endl << "Randevu almak istediðiniz tarihi girin (18/11/2022): ";
+	getline(cin, tar);
+	cout << endl << "Hasta TC'si : ";
+	getline(cin, tc);
+	cout << endl << "mahalleyi girin : ";
+	getline(cin, mh);
+	cout << endl << "sokaðý girin : ";
+	getline(cin, sk);
+	cout << endl << "ilçeyi girin : ";
+	getline(cin, ilce);
+	cout << endl << "daire no girin : ";
+	cin >> apt;
+
+	ekranaBas(h1, d);
+
+
+}
+
+
+
+
+
+
+
 
 int main() {
-	setlocale(LC_ALL, "Turkish");               
-	system("title Ýskenderun Devlet Hastanesi  Randevu Sistemi                                                                                                   "); //@NurullahSahin
+	setlocale(LC_ALL, "Turkish");
+	system("title Ýskenderun Devlet Hastanesi                                                                                                          "); //@NurullahSahin
+
 
 
 	system("pause");
