@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void color(int color)  //@ErcanDuman
+void color(int color) //@ErcanDuman
 {
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
 }
@@ -18,7 +18,7 @@ void gotoxy(int x, int y) //@ErcanDuman
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c);
 }
 
-class Adres    //@NurullahSahin
+class Adres   //@NurullahSahin
 {
 	string mahalle, sokak, ilcee, tel_no;
 	int apt_no;
@@ -53,7 +53,8 @@ public:
 };
 
 //@NurullahSahin
-class Doktor :public Insan {
+class Doktor :public Insan
+{
 	int poliklinik_no;
 
 public:
@@ -136,7 +137,29 @@ void RandevuOluþtur(Doktor& d)
 
 
 }
-
+//@ErenAyguer
+void ekranaBas(Insan& hasta, Insan& doktor)
+{
+	system("color fd");
+	system("cls");
+	cout << "---------Randevu baþarýyla oluþturuldu---------" << endl;
+	cout << "_______Hasta Bilgileri_______" << endl;
+	cout << "Hastanýn Ýsmi :";
+	cout << hasta.isim << endl;
+	cout << "Hastanýn Soyismi :";
+	cout << hasta.soyisim << endl;
+	cout << "Hastanýn TC No'su :";
+	cout << hasta.tcNo << endl;
+	cout << "Hastanýn Adresi:";
+	hasta.adres.ekranaBasAdres();
+	hasta.BilgiAl();
+	cout << endl << "______Doktor Bilgileri______" << endl;
+	cout << "Doktorun Ýsmi :";
+	cout << doktor.isim << endl;
+	cout << "Doktorun Soyismi :";
+	cout << doktor.soyisim << endl;
+	doktor.BilgiAl();
+}
 
 
 
@@ -146,8 +169,7 @@ void RandevuOluþtur(Doktor& d)
 
 int main() {
 	setlocale(LC_ALL, "Turkish");
-	system("title Ýskenderun Devlet Hastanesi                                                                                                          "); //@NurullahSahin
-
+	system("title Ýskenderun Devlet Hastanesi  Randevu Sistemi                                                                                                   "); //@NurullahSahin
 
 
 	system("pause");
