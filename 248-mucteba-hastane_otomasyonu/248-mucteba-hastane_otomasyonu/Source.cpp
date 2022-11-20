@@ -138,6 +138,7 @@ void RandevuOluþtur(Doktor& d)
 
 }
 //@ErenAyguer
+
 void ekranaBas(Insan& hasta, Insan& doktor)
 {
 	system("color fd");
@@ -162,16 +163,84 @@ void ekranaBas(Insan& hasta, Insan& doktor)
 }
 
 
+//Bu alana doktor secme nesnesi ekledim...
+void DoktorSec(Doktor& dok1, Doktor& dok2)
+{
+
+
+	cout << endl << "-------Doktor seçim ekranýna hoþgeldiniz randevu almak istediðiniz doktoru seçiniz-------";
+
+	int counter = 1;
+	char key;
+
+	for (int i = 0;;)
+	{
+
+
+		gotoxy(1, 2);
+		color(Set[0]);
+		cout << "Dr.Mehmet Çiftçi";
+
+		gotoxy(1, 3);
+		color(Set[1]);
+		cout << "Dr.Sevgi Gülsen";
+
+		gotoxy(1, 4);
+		color(Set[2]);
+		cout << "Exit";
+
+		key = _getch();
+		
+		if (key == 72 && (counter >= 2 && counter <= 3))
+
+			counter--;
+
+		if (key == 80 && (counter >= 1 && counter <= 2))
+
+			counter++;
+
+		if (key == '\r')
+		{
+			if (counter == 1)
+			{
+				RandevuOluþtur(dok1);
+
+				break;
+			}
+			if (counter == 2)
+			{
+				RandevuOluþtur(dok2);
+
+				break;
+			}
+			if (counter == 3)
+
+				exit(0);
+
+
+		}
+
+
+
+
+	}
+
+}
+
+
 
 
 
 
 
 int main() {
-	setlocale(LC_ALL, "Turkish");
-	system("title Ýskenderun Devlet Hastanesi  Randevu Sistemi                                                                                                   "); //@NurullahSahin
+	setlocale(LC_ALL, "Turkish");	//@NurullahSahin @Ercan Duman burasi Randevu sistemi olarak kalsin daha iyi olur
+	system("title Ýskenderun Devlet Hastanesi Randevu Sistemi                                                                                                        ");
 
 
+	Doktor d1("kýrkevler mahallesi", "Bilmemne sokak", "merkez", 52, "05555", "23232", "Mehmet", "Ciftci", 1);//@ErenAyguer
+	Doktor d2("kýrkevl2er mah2allesi2", "Bilmemne2 sokak", "merkez", 51, "03333", "12121", "Sevgi", "Gulsen", 2);
+	DoktorSec(d1, d2);
 	system("pause");
 
 }
