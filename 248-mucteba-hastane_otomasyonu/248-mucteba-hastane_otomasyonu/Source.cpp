@@ -106,14 +106,84 @@ public:
 //@ErenAyguer
 void RandevuOluþtur(Doktor& d)
 {
-	string i, tc, si, mh, sk, ilce, tar;
+	string i, tc, si, tel, mh, sk, ilce, tar;
 	int apt, isl;
 	system("cls");
 	cout << endl << "_______Randevu bilgileri_______" << endl;
 	cout << endl << "-----Ýstediðiniz randevuyu seçin-----" << endl;
 
 
+	//@ErcanDuman
+	int Set[] = { 7,7,7 };
+	int counter = 1;
+	char key;
 
+	for (int i = 0;;)
+	{
+
+
+		gotoxy(1, 4);
+		color(Set[0]);
+		cout << "Muayene randevusu (500 TL)";
+
+		gotoxy(1, 5);
+		color(Set[1]);
+		cout << "Operason randevusu(2500 TL)";
+
+		gotoxy(1, 6);
+		color(Set[2]);
+		cout << "Exit";
+
+		key = _getch();
+		//@ErcanDuman
+		if (key == 72 && (counter >= 2 && counter <= 3))
+		{
+			counter--;
+		}
+		if (key == 80 && (counter >= 1 && counter <= 2))
+		{
+			counter++;
+		}
+		if (key == '\r')
+		{
+			if (counter == 1)
+			{
+				isl = 1;
+				break;
+
+			}
+			if (counter == 2)
+			{
+				isl = 2;
+				break;
+			}
+			if (counter == 3)
+			{
+				exit(0);
+			}
+
+		}
+
+		//@ErcanDuman
+
+		Set[0] = 7;
+		Set[1] = 7;
+		Set[2] = 7;
+
+		if (counter == 1)
+		{
+			Set[0] = 75;
+		}
+		if (counter == 2)
+		{
+			Set[1] = 75;
+		}
+		if (counter == 3)
+		{
+			Set[2] = 75;
+		}
+		//@ErcanDuman
+	}
 	cout << endl << "-----Hastanýn bilgileri-----" << endl;
 
 	cout << endl << "Hasta Adý : ";
@@ -132,7 +202,10 @@ void RandevuOluþtur(Doktor& d)
 	getline(cin, ilce);
 	cout << endl << "daire no girin : ";
 	cin >> apt;
+	cout << endl << "Telefon numarasý:";
+	cin >> tel;
 
+	Hasta h1(mh, sk, ilce, apt, tel, tc, i, si, isl, tar);//@ErcanDuman
 	ekranaBas(h1, d);
 
 
@@ -162,14 +235,13 @@ void ekranaBas(Insan& hasta, Insan& doktor)
 	doktor.BilgiAl();
 }
 
-
-//Bu alana doktor secme nesnesi ekledim...
+//@ErcanDuman
 void DoktorSec(Doktor& dok1, Doktor& dok2)
 {
 
 
 	cout << endl << "-------Doktor seçim ekranýna hoþgeldiniz randevu almak istediðiniz doktoru seçiniz-------";
-
+	int Set[] = { 7,7,7 };
 	int counter = 1;
 	char key;
 
@@ -190,15 +262,15 @@ void DoktorSec(Doktor& dok1, Doktor& dok2)
 		cout << "Exit";
 
 		key = _getch();
-		
+		//@ErcanDuman
 		if (key == 72 && (counter >= 2 && counter <= 3))
-
+		{
 			counter--;
-
+		}
 		if (key == 80 && (counter >= 1 && counter <= 2))
-
+		{
 			counter++;
-
+		}
 		if (key == '\r')
 		{
 			if (counter == 1)
@@ -214,22 +286,32 @@ void DoktorSec(Doktor& dok1, Doktor& dok2)
 				break;
 			}
 			if (counter == 3)
-
+			{
 				exit(0);
-
+			}
 
 		}
+		//@ErcanDuman
+		Set[0] = 7;
+		Set[1] = 7;
+		Set[2] = 7;
 
-
-
+		if (counter == 1)
+		{
+			Set[0] = 75;
+		}
+		if (counter == 2)
+		{
+			Set[1] = 75;
+		}
+		if (counter == 3)
+		{
+			Set[2] = 75;
+		}
 
 	}
 
 }
-
-
-
-
 
 
 

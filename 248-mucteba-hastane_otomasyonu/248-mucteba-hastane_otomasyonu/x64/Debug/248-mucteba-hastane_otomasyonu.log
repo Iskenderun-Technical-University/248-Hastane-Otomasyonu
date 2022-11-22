@@ -1,5 +1,2 @@
 ﻿  Source.cpp
-C:\Users\ercan\OneDrive\Masaüstü\GitHub\248-Hastane-Otomasyonu\248-mucteba-hastane_otomasyonu\248-mucteba-hastane_otomasyonu\Source.cpp(136,12): error C2065: 'h1': bildirimi yapılmamış tanımlayıcı
-C:\Users\ercan\OneDrive\Masaüstü\GitHub\248-Hastane-Otomasyonu\248-mucteba-hastane_otomasyonu\248-mucteba-hastane_otomasyonu\Source.cpp(181,9): error C2065: 'Set': bildirimi yapılmamış tanımlayıcı
-C:\Users\ercan\OneDrive\Masaüstü\GitHub\248-Hastane-Otomasyonu\248-mucteba-hastane_otomasyonu\248-mucteba-hastane_otomasyonu\Source.cpp(185,9): error C2065: 'Set': bildirimi yapılmamış tanımlayıcı
-C:\Users\ercan\OneDrive\Masaüstü\GitHub\248-Hastane-Otomasyonu\248-mucteba-hastane_otomasyonu\248-mucteba-hastane_otomasyonu\Source.cpp(189,9): error C2065: 'Set': bildirimi yapılmamış tanımlayıcı
+  248-mucteba-hastane_otomasyonu.vcxproj -> C:\Users\ercan\OneDrive\Masaüstü\GitHub\248-Hastane-Otomasyonu\248-mucteba-hastane_otomasyonu\x64\Debug\248-mucteba-hastane_otomasyonu.exe
