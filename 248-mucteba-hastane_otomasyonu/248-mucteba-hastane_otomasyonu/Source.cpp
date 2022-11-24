@@ -58,6 +58,7 @@ class Doktor :public Insan
 	int poliklinik_no;
 
 public:
+
 	Doktor(string mh, string sk, string ilce, int apt, string tel, string tc, string i, string si, int p_no) : Insan(mh, sk, ilce, apt, tel, tc, i, si) {
 		poliklinik_no = p_no;
 	}
@@ -292,8 +293,8 @@ void DoktorSec(Doktor& dok1, Doktor& dok2)
 
 		}
 		//@ErcanDuman
-		Set[0] = 7;
-		Set[1] = 7;
+		Set[0] = 9;
+		Set[1] = 12;
 		Set[2] = 7;
 
 		if (counter == 1)
@@ -306,7 +307,7 @@ void DoktorSec(Doktor& dok1, Doktor& dok2)
 		}
 		if (counter == 3)
 		{
-			Set[2] = 75;
+			Set[2] = 10;
 		}
 
 	}
