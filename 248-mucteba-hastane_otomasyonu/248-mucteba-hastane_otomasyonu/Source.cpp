@@ -324,7 +324,7 @@ int main() {
 
 
 		//@NurullahSahin(login ekrani)
-		int sifre;
+		string sifre;
 		int giris_sayisi = 3;
 		cout << "Hastahane Randevu Sistemine Hosgeldiniz" << endl;
 		cout << "(deneme hakki :3)" << endl;
@@ -335,7 +335,7 @@ int main() {
 
 			cout << "Randevu Sistemi Giris Sifrenizi Giriniz : " << endl;
 			cin >> sifre;
-			if (sifre == 12345)
+			if (sifre == "12345")
 			{
 				cout << "Giris Basarili..." << endl;
 				break;
@@ -349,7 +349,7 @@ int main() {
 					giris_sayisi--;
 				if (giris_sayisi == 0)
 				{
-					cout << "Hesabiniz Kilitlenmistir Musteri Hizmetleri ile iletisime geciniz" << endl;
+					cout << "Oturumunuz Kilitlenmistir. Hastane Musteri Hizmetleri ile iletisime geciniz" << endl;
 					return 0;
 				}
 			}
