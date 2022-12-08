@@ -110,7 +110,7 @@ void RandevuOluþtur(Doktor& d)
 	string i, tc, si, tel, mh, sk, ilce, tar;
 	int apt, isl;
 	system("cls");
-	cout << endl << "_______Randevu bilgileri_______" << endl;
+	cout<<endl<<"_______Randevu bilgileri_______" << endl;
 	cout << endl << "-----Ýstediðiniz randevuyu seçin-----" << endl;
 
 
@@ -187,6 +187,8 @@ void RandevuOluþtur(Doktor& d)
 	}
 	cout << endl << "-----Hastanýn bilgileri-----" << endl;
 
+	cout << endl << "			";
+	getline(cin, i);
 	cout << endl << "Hasta Adý : ";
 	getline(cin, i);
 	cout << endl << "Hasta Soyadý : ";
@@ -321,9 +323,50 @@ int main() {
 	system("title Ýskenderun Devlet Hastanesi Randevu Sistemi                                                                                                        ");
 
 
+		//@NurullahSahin(login ekrani)
+		int sifre;
+		int giris_sayisi = 3;
+		cout << "Hastahane Randevu Sistemine Hosgeldiniz" << endl;
+		cout << "(deneme hakki :3)" << endl;
+
+
+		while (1)
+		{
+
+			cout << "Randevu Sistemi Giris Sifrenizi Giriniz : " << endl;
+			cin >> sifre;
+			if (sifre == 12345)
+			{
+				cout << "Giris Basarili..." << endl;
+				break;
+			}
+			else
+			{
+				cout << "Yanlis Sifre" << endl << endl;
+				cout << giris_sayisi - 1 << " hakkiniz kaldi" << endl;
+
+				if (giris_sayisi > 0)
+					giris_sayisi--;
+				if (giris_sayisi == 0)
+				{
+					cout << "Hesabiniz Kilitlenmistir Musteri Hizmetleri ile iletisime geciniz" << endl;
+					return 0;
+				}
+			}
+		}
+
+		system("cls");
+		cout << "Giris Basarili...";
+
+
+
+
+
 	Doktor d1("kýrkevler mahallesi", "Bilmemne sokak", "merkez", 52, "05555", "23232", "Mehmet", "Ciftci", 1);//@ErenAyguer
 	Doktor d2("kýrkevl2er mah2allesi2", "Bilmemne2 sokak", "merkez", 51, "03333", "12121", "Sevgi", "Gulsen", 2);
 	DoktorSec(d1, d2);
 	system("pause");
 
 }
+
+
