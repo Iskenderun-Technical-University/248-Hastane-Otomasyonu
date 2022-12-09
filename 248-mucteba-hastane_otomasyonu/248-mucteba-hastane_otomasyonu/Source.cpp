@@ -3,6 +3,7 @@
 #include <string>
 #include <conio.h>
 
+
 using namespace std;
 
 void color(int color) //@ErcanDuman
@@ -80,12 +81,12 @@ public:
 		if (isl == 1)
 		{
 			islemturu = "muayene";
-			ucret = 200;
+			ucret = 500;
 		}
 		if (isl == 2)
 		{
 			islemturu = "operasyon";
-			ucret = 2000;
+			ucret = 2500;
 		}
 	}
 	void ekranaBasRanvdevu() {
@@ -209,6 +210,7 @@ void RandevuOluþtur(Doktor& d)
 	cin >> tel;
 
 	Hasta h1(mh, sk, ilce, apt, tel, tc, i, si, isl, tar);//@ErcanDuman
+	Sleep(500);
 	ekranaBas(h1, d);
 
 
@@ -217,9 +219,10 @@ void RandevuOluþtur(Doktor& d)
 
 void ekranaBas(Insan& hasta, Insan& doktor)
 {
-	system("color fd");
+	system("color 4B");
+	Sleep(500);
 	system("cls");
-	cout << "---------Randevu baþarýyla oluþturuldu---------" << endl;
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 	cout << "_______Hasta Bilgileri_______" << endl;
 	cout << "Hastanýn Ýsmi :";
 	cout << hasta.isim << endl;
@@ -228,14 +231,19 @@ void ekranaBas(Insan& hasta, Insan& doktor)
 	cout << "Hastanýn TC No'su :";
 	cout << hasta.tcNo << endl;
 	cout << "Hastanýn Adresi:";
+	Sleep(1000);
 	hasta.adres.ekranaBasAdres();
+	Sleep(1000);
 	hasta.BilgiAl();
-	cout << endl << "______Doktor Bilgileri______" << endl;
+	Sleep(1000);
+	cout << endl << endl << "______Doktor Bilgileri______" << endl;
 	cout << "Doktorun Ýsmi :";
 	cout << doktor.isim << endl;
 	cout << "Doktorun Soyismi :";
 	cout << doktor.soyisim << endl;
+	Sleep(1000);
 	doktor.BilgiAl();
+	
 }
 
 //@ErcanDuman
@@ -326,7 +334,7 @@ int main() {
 		//@NurullahSahin(login ekrani)
 		string sifre;
 		int giris_sayisi = 3;
-		cout << "Hastahane Randevu Sistemine Hosgeldiniz" << endl;
+		cout << "Hastane Randevu Sistemine Hosgeldiniz" << endl;
 		cout << "(deneme hakki :3)" << endl;
 
 
@@ -348,16 +356,21 @@ int main() {
 				if (giris_sayisi > 0)
 					giris_sayisi--;
 				if (giris_sayisi == 0)
-				{
+				{	
+					system("color 4E");
 					cout << "Oturumunuz Kilitlenmistir. Hastane Musteri Hizmetleri ile iletisime geciniz" << endl;
 					return 0;
 				}
 			}
+			
 		}
+		
+		Sleep(2000);
+		
 
 		system("cls");
-		cout << "Giris Basarili...";
-
+		
+		Sleep(500);
 
 
 
@@ -365,6 +378,9 @@ int main() {
 	Doktor d1("kýrkevler mahallesi", "Bilmemne sokak", "merkez", 52, "05555", "23232", "Mehmet", "Ciftci", 1);//@ErenAyguer
 	Doktor d2("kýrkevl2er mah2allesi2", "Bilmemne2 sokak", "merkez", 51, "03333", "12121", "Sevgi", "Gulsen", 2);
 	DoktorSec(d1, d2);
+	Sleep(1000);
+	system("color 6f");
+	cout << endl << endl<< "---------Randevu baþarýyla oluþturuldu---------" << endl << endl << endl;
 	system("pause");
 
 }
