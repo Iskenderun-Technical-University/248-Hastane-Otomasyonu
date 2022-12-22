@@ -1,10 +1,11 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <Windows.h>
 #include <string>
 #include <conio.h>
 
 
 using namespace std;
+
 
 void color(int color) //@ErcanDuman
 {
@@ -48,23 +49,24 @@ public:
 		soyisim = si;
 
 	}
-	virtual void BilgiAl() = 0;
-	friend void ekranaBas(Insan& ob1, Insan& ob2);
+	virtual void BilgiAl()=0 ;// SÄ±nÄ±fÄ±n fonksiyonunun miras alan diÄŸer sÄ±nÄ±flar tarafÄ±ndan kullanÄ±lmasÄ±nÄ± saÄŸlamak iÃ§in virtual anahtar kelimesiyle tanÄ±mlarÄ±z
+	friend void ekranaBas(Insan& ob1, Insan& ob2);// SÄ±nÄ±fÄ±n Ã¼yesi olmamasÄ±na raÄŸmen o sÄ±nÄ±fÄ±n private Ã¼yelerine eriÅŸme hakkÄ±na sahip olmasi icin friend anahtar kelimesi tanimlariz.
 
 };
 
 //@NurullahSahin
 class Doktor :public Insan
 {
-	int poliklinik_no;
+	
 
 public:
-
+	
+	int poliklinik_no;
 	Doktor(string mh, string sk, string ilce, int apt, string tel, string tc, string i, string si, int p_no) : Insan(mh, sk, ilce, apt, tel, tc, i, si) {
 		poliklinik_no = p_no;
 	}
 	void BilgiAl() {
-		cout << endl << "Poliklinik numarası : " << poliklinik_no << endl;
+		cout << endl << "Poliklinik numarasÄ± : " << poliklinik_no << endl;
 	}
 
 };
@@ -90,7 +92,7 @@ public:
 		}
 	}
 	void ekranaBasRanvdevu() {
-		cout << endl << "________________________" << endl << "Tarih : " << tarih << endl << "İşlem : " << islemturu << endl << "Alınacak ücret : " << ucret;
+		cout << endl << "________________________" << endl << "Tarih : " << tarih << endl << "Ä°ÅŸlem : " << islemturu << endl << "AlÄ±nacak Ã¼cret : " << ucret;
 	}
 
 };
@@ -106,13 +108,13 @@ public:
 	}
 };
 //@ErenAyguer
-void RandevuOluştur(Doktor& d)
+void RandevuOluÅŸtur(Doktor& d)
 {
 	string i, tc, si, tel, mh, sk, ilce, tar;
 	int apt, isl;
 	system("cls");
 	cout<<endl<<"_______Randevu bilgileri_______" << endl;
-	cout << endl << "-----İstediğiniz randevuyu seçin-----" << endl;
+	cout << endl << "-----Ä°stediÄŸiniz randevuyu seÃ§in-----" << endl;
 
 
 	//@ErcanDuman
@@ -186,27 +188,27 @@ void RandevuOluştur(Doktor& d)
 		}
 		//@ErcanDuman
 	}
-	cout << endl << "-----Hastanın bilgileri-----" << endl;
+	cout << endl << "-----HastanÄ±n bilgileri-----" << endl;
 
 	cout << endl << "			";
 	getline(cin, i);
-	cout << endl << "Hasta Adı : ";
+	cout << endl << "Hasta AdÄ± : ";
 	getline(cin, i);
-	cout << endl << "Hasta Soyadı : ";
+	cout << endl << "Hasta SoyadÄ± : ";
 	getline(cin, si);
-	cout << endl << "Randevu almak istediğiniz tarihi girin (18/11/2022): ";
+	cout << endl << "Randevu almak istediÄŸiniz tarihi girin (18/11/2022): ";
 	getline(cin, tar);
 	cout << endl << "Hasta TC'si : ";
 	getline(cin, tc);
 	cout << endl << "mahalleyi girin : ";
 	getline(cin, mh);
-	cout << endl << "sokağı girin : ";
+	cout << endl << "sokaÄŸÄ± girin : ";
 	getline(cin, sk);
-	cout << endl << "ilçeyi girin : ";
+	cout << endl << "ilÃ§eyi girin : ";
 	getline(cin, ilce);
 	cout << endl << "daire no girin : ";
 	cin >> apt;
-	cout << endl << "Telefon numarası:";
+	cout << endl << "Telefon numarasÄ±:";
 	cin >> tel;
 
 	Hasta h1(mh, sk, ilce, apt, tel, tc, i, si, isl, tar);//@ErcanDuman
@@ -224,20 +226,20 @@ void ekranaBas(Insan& hasta, Insan& doktor)
 	system("cls");
 	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 	cout << "_______Hasta Bilgileri_______" << endl;
-	cout << "Hastanın İsmi :";
+	cout << "HastanÄ±n Ä°smi :";
 	cout << hasta.isim << endl;
-	cout << "Hastanın Soyismi :";
+	cout << "HastanÄ±n Soyismi :";
 	cout << hasta.soyisim << endl;
-	cout << "Hastanın TC No'su :";
+	cout << "HastanÄ±n TC No'su :";
 	cout << hasta.tcNo << endl;
-	cout << "Hastanın Adresi:";
+	cout << "HastanÄ±n Adresi:";
 	Sleep(1000);
 	hasta.adres.ekranaBasAdres();
 	Sleep(1000);
 	hasta.BilgiAl();
 	Sleep(1000);
 	cout << endl << endl << "______Doktor Bilgileri______" << endl;
-	cout << "Doktorun İsmi :";
+	cout << "Doktorun Ä°smi :";
 	cout << doktor.isim << endl;
 	cout << "Doktorun Soyismi :";
 	cout << doktor.soyisim << endl;
@@ -251,7 +253,7 @@ void DoktorSec(Doktor& dok1, Doktor& dok2)
 {
 
 
-	cout << endl << "-------Doktor seçim ekranına hoşgeldiniz randevu almak istediğiniz doktoru seçiniz-------";
+	cout << endl << "-------Doktor seÃ§im ekranÄ±na hoÅŸgeldiniz randevu almak istediÄŸiniz doktoru seÃ§iniz-------";
 	int Set[] = { 7,7,7 };
 	int counter = 1;
 	char key;
@@ -262,11 +264,11 @@ void DoktorSec(Doktor& dok1, Doktor& dok2)
 
 		gotoxy(1, 2);
 		color(Set[0]);
-		cout << "Dr.Mehmet Çiftçi";
+		cout << "Dr.Mehmet Ã‡iftÃ§i";
 
 		gotoxy(1, 3);
 		color(Set[1]);
-		cout << "Dr.Sevgi Gülsen";
+		cout << "Dr.Sevgi GÃ¼lsen";
 
 		gotoxy(1, 4);
 		color(Set[2]);
@@ -286,13 +288,13 @@ void DoktorSec(Doktor& dok1, Doktor& dok2)
 		{
 			if (counter == 1)
 			{
-				RandevuOluştur(dok1);
+				RandevuOluÅŸtur(dok1);
 
 				break;
 			}
 			if (counter == 2)
 			{
-				RandevuOluştur(dok2);
+				RandevuOluÅŸtur(dok2);
 
 				break;
 			}
@@ -317,7 +319,7 @@ void DoktorSec(Doktor& dok1, Doktor& dok2)
 		}
 		if (counter == 3)
 		{
-			Set[2] = 10;
+			Set[2] = 30;
 		}
 
 	}
@@ -328,7 +330,7 @@ void DoktorSec(Doktor& dok1, Doktor& dok2)
 
 int main() {
 	setlocale(LC_ALL, "Turkish");	//@NurullahSahin @Ercan Duman burasi Randevu sistemi olarak kalsin daha iyi olur
-	system("title İskenderun Devlet Hastanesi Randevu Sistemi                                                                                                        ");
+	system("title Ä°skenderun Devlet Hastanesi Randevu Sistemi                                                                                                        ");
 
 
 		//@NurullahSahin(login ekrani)
@@ -375,12 +377,12 @@ int main() {
 
 
 
-	Doktor d1("kırkevler mahallesi", "Bilmemne sokak", "merkez", 52, "05555", "23232", "Mehmet", "Ciftci", 1);//@ErenAyguer
-	Doktor d2("kırkevl2er mah2allesi2", "Bilmemne2 sokak", "merkez", 51, "03333", "12121", "Sevgi", "Gulsen", 2);
+	Doktor d1("kÄ±rkevler mahallesi", "Bilmemne sokak", "merkez", 52, "05555", "23232", "Mehmet", "Ciftci", 1);//@ErenAyguer
+	Doktor d2("kÄ±rkevl2er mah2allesi2", "Bilmemne2 sokak", "merkez", 51, "03333", "12121", "Sevgi", "Gulsen", 2);
 	DoktorSec(d1, d2);
 	Sleep(1000);
 	system("color 6f");
-	cout << endl << endl<< "---------Randevu başarıyla oluşturuldu---------" << endl << endl << endl;
+	cout << endl << endl<< "---------Randevu baÅŸarÄ±yla oluÅŸturuldu---------" << endl << endl << endl;
 	system("pause");
 
 }
